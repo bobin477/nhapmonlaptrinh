@@ -797,6 +797,143 @@ public class Main {
         }
     }
 
+
+    //bai 41 42 nhap xua mang 1 so thuc
+    public static void Bai4vs42() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhap so luong phan tu mang");
+        int size = sc.nextInt();
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            System.out.println("nhap phan tu thu" + (i + 1));
+            array[i] = sc.nextInt();
+        }
+
+        System.out.println("cac phan tu trong mang: ");
+        for (int i = 0; i < size; i++) {
+            System.out.println(array[i]);
+        }
+
+    }
+
+    public static void Bai43vs44() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhap so luong phan tu mang");
+        int size = sc.nextInt();
+        double[] array = new double[size];
+        for (int i = 0; i < size; i++) {
+            System.out.println("nhap phan tu thu" + (i + 1));
+            array[i] = sc.nextInt();
+        }
+
+        System.out.println("cac phan tu trong mang: ");
+        for (int i = 0; i < size; i++) {
+            System.out.println(array[i]);
+        }
+
+    }
+
+    //cac gia tri chan trong mang 1 chieu
+
+
+    public static void Bai45(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                System.out.println(arr[i]);
+            }
+        }
+    }
+
+    public static void Bai46(double[] arr) {
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] * 10 < 0) {
+                System.out.println(arr[i]);
+            }
+        }
+    }
+
+
+    //Viết hàm tìm ɡiá trị lớn nhất tronɡ mảnɡ 1 chiều các số thực
+    public static void Bai47(double[] arr) {
+        double max = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+
+        System.out.println("phan tu lon nhat la" + max);
+    }
+
+    //xuat ra gia tri duong dau tien k thi xuat -1
+    public static void Bai48(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                System.out.println("gia tri duong dau tien" + arr[i]);
+                return;
+            }
+        }
+
+        System.out.println("khong co gia tri duong");
+    }
+
+    //tim chan cuoi cung
+    public static int Bai49(int[] arr) {
+        int chanCuoi = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                chanCuoi = arr[i];
+            }
+        }
+
+        return chanCuoi;
+    }
+
+    //    Tìm 1 vị trí mà ɡiá trị tại vị trí đó là ɡiá trị nhỏ nhất tronɡ mảnɡ 1 chiều các số thực
+    public static void Bai50(double[] arr) {
+        double min = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (min > arr[i]) {
+                min = arr[i];
+            }
+        }
+
+        System.out.println("phan tu lon nhat la" + min);
+    }
+
+
+    public static void inputArrInt() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhap so luong phan tu mang");
+        int size = sc.nextInt();
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            System.out.println("nhap phan tu thu" + (i + 1));
+            array[i] = sc.nextInt();
+        }
+        System.out.println("cac phan tu trong mang: ");
+//        Bai45(array);
+//        Bai48(array);
+//        System.out.println(Bai49(array));
+    }
+
+
+    public static void inputArrDouble() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhap so luong phan tu mang");
+        int size = sc.nextInt();
+        double[] array = new double[size];
+        for (int i = 0; i < size; i++) {
+            System.out.println("nhap phan tu thu" + (i + 1));
+            array[i] = sc.nextInt();
+        }
+        System.out.println("cac phan tu trong mang: ");
+//        Bai46(array);
+//        Bai47(array);
+//        Bai50(array);
+    }
+
     public static void main(String[] args) {
 //        bai01();
 //        bai02();
@@ -836,6 +973,10 @@ public class Main {
 //        bai38();
 //        bai39();
 //        bai40();
+//        Bai41vs42();
+//        Bai43vs44();
+        inputArrInt();
+//        inputArrDouble();
     }
 
 }

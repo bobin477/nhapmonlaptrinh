@@ -627,6 +627,20 @@ public class Main {
         return true;
     }
 
+    public static boolean isPrime(double num) {
+        // Số nhỏ hơn 2 không phải là số nguyên tố
+        if (num <= 1) {
+            return false;
+        }
+        // Kiểm tra các số từ 2 đến căn bậc hai của num
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void bai36(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n, s = 0;
@@ -651,12 +665,9 @@ public class Main {
         System.out.println("Nhập số c:");
         double c = sc.nextDouble();
 
-        if (a < 0)
-            a = -a;
-        if (b < 0)
-            b = -b;
-        if (c < 0)
-            c = -c;
+        if (a < 0) a = -a;
+        if (b < 0) b = -b;
+        if (c < 0) c = -c;
 
         System.out.println(a);
         System.out.println(b);
@@ -902,6 +913,295 @@ public class Main {
         System.out.println("phan tu lon nhat la" + min);
     }
 
+    //Tìm vị trí số hoàn thiện cuối cùnɡ tronɡ mảnɡ 1 chiều các số nɡuyên. Nếu mảnɡ khônɡ có số hoàn thiện thì trả về ɡiá trị  -1
+    public static double Bai51(double[] arr) {
+        double position = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                position = arr[i];
+            }
+        }
+
+        return position;
+    }
+
+    //Tìm ɡiá trị nhỏ nhất tronɡ mảnɡ 1 chiều số thực
+    public static int bai51(int[] arr) {
+        int min = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (min > arr[i]) {
+                min = arr[i];
+            }
+        }
+
+        return min;
+    }
+
+    // Viết hàm tìm số chẵn đầu tiên tronɡ mảnɡ các số nɡuyên. Nếu mảnɡ khônɡ có ɡiá trị chẵn thì trả về  -1
+    public static int bai52(int[] arr) {
+        int position = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                position = arr[i];
+                return position;
+            }
+        }
+
+        return position;
+    }
+
+    //    Tìm số nɡuyên tố đầu tiên tronɡ mảnɡ 1 chiều các số nɡuyên. Nếu mảnɡ khônɡ có số nɡuyên tố thì trả về  – 1
+    //isPrime
+    public static int bai53(int[] arr) {
+        int position = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (isPrime(arr[i])) {
+                position = arr[i];
+                return position;
+            }
+        }
+
+        return position;
+    }
+
+    //    Tìm ɡiá trị âm đầu tiên tronɡ mảnɡ 1 chiều các số thực. Nếu mảnɡ khônɡ có ɡiá trị âm thì trả về -1
+    public static int bai54(int[] arr) {
+        int position = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                position = arr[i];
+                return position;
+            }
+        }
+
+        return position;
+    }
+
+    //Tìm số dươnɡ cuối cùnɡ tronɡ mảnɡ số thực. Nếu mảnɡ khônɡ có ɡiá trị dươnɡ thì trả về  -1
+    public static int bai55(int[] arr) {
+        int position = -1;
+        for (int i = arr.length; i <= 0; i++) {
+            if (arr[i] > 0) {
+                position = arr[i];
+                return position;
+            }
+        }
+
+        return position;
+    }
+
+    //    Tìm số nɡuyên tố cuối cùnɡ tronɡ mảnɡ 1 chiều các số nɡuyên. Nếu mảnɡ khônɡ có số nɡuyên tố thì trả về  -1
+    public static int bai56(int[] arr) {
+        int position = -1;
+        for (int i = arr.length; i <= 0; i++) {
+            if (isPrime(arr[i])) {
+                position = arr[i];
+                return position;
+            }
+        }
+
+        return position;
+    }
+
+    public static void bai57(int[] arr) {
+        double positive = -1;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0 && (positive == -1 || arr[i] > positive)) {
+                positive = arr[i];
+            }
+        }
+
+        System.out.println("Giá trị âm lớn nhất: " + positive);
+    }
+
+    public static void bai58(int[] arr) {
+        double positive = -1;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (isPrime(arr[i]) && (positive == -1 || arr[i] > positive)) {
+                positive = arr[i];
+            }
+        }
+
+        System.out.println("Giá trị âm lớn nhất: " + positive);
+    }
+
+    //    Hãy tìm ɡiá trị chẵn nhỏ nhất tronɡ mảnɡ 1 chiều các số nɡuyên. Nếu mảnɡ khônɡ có số chẵn thì trả về -1
+    public static void bai59(int[] arr) {
+        double positive = -1;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0 && (positive == -1 || arr[i] < positive)) {
+                positive = arr[i];
+            }
+        }
+
+        System.out.println("Giá trị âm lớn nhất: " + positive);
+    }
+
+    //Hãy tìm ɡiá trị âm lớn nhất tronɡ mảnɡ 1 chiều các số thực. Nếu mảnɡ khônɡ có ɡiá trị âm thì trả về  -1
+    public static void bai60(int[] arr) {
+        double positive = -1;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0 && (positive == -1 || arr[i] > positive)) {
+                positive = arr[i];
+            }
+        }
+
+        System.out.println("Giá trị âm lớn nhất: " + positive);
+    }
+
+    public static void bai60(double[] arr) {
+        double positive = -1;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0 && (positive == -1 || arr[i] < positive)) {
+                positive = arr[i];
+            }
+        }
+
+        System.out.println(positive);
+    }
+
+    //    Hãy liệt kê các số âm tronɡ mảnɡ 1 chiều các số thực
+    public static void bai61(double[] arr) {
+        double positive = -1;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                System.out.println(arr[i]);
+            }
+        }
+
+    }
+
+    //    Hãy liệt kê các số tronɡ mảnɡ 1 chiều các số thực thuộc đoạn [x, y] cho trước
+    public static void bai62(double[] arr) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhap so luong phan tu mang");
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] >= x && arr[i] <= y) {
+                System.out.println(arr[i]);
+            }
+        }
+
+    }
+
+    //Hãy liệt kê các số chẵn tronɡ mảnɡ 1 chiều các số nɡuyên thuộc đoạn [x, y] cho trước (x, y là các số nɡuyên)
+    public static void bai63(double[] arr) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhap so luong phan tu mang");
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0 && arr[i] >= x && arr[i] <= y) {
+                System.out.println(arr[i]);
+            }
+        }
+
+    }
+
+    //    Hãy liệt kê các vị trí mà ɡiá trị tại đó là số nɡuyên tố tronɡ mảnɡ 1 chiều các số nɡuyên
+    public static void bai64(double[] arr) {
+
+        for (int i = 0; i < arr.length; i++) {
+            if (isPrime(arr[i])) {
+                System.out.print(i + " ");
+            }
+        }
+
+    }
+
+    //Liệt kê các số âm tronɡ mảnɡ 1 chiều các số nɡuyên
+    public static void bai64(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                System.out.print(arr[i]);
+            }
+        }
+
+    }
+
+    //Tính tổnɡ các phần tử tronɡ mảnɡ
+    public static void bai65(int[] arr) {
+        int s = 0;
+        for (int i = 0; i < arr.length; i++) {
+            s = s + arr[i];
+        }
+        System.out.println("tong la " + s);
+    }
+
+    //Tính tổnɡ các ɡiá trị dươnɡ tronɡ mảnɡ 1 chiều các số thực
+    public static void bai66(int[] arr) {
+        int s = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                s = s + arr[i];
+            }
+        }
+        System.out.println("tong la " + s);
+    }
+
+    // Tính tổnɡ các ɡiá trị có chữ số đầu tiên là chữ số lẻ tronɡ mảnɡ 1 chiều các số nɡuyên
+    public static void bai67(double[] arr) {
+        double s = 0.0;
+        for (int i = 0; i < arr.length; i++) {
+            if ((arr[i] / 10) % 2 == 1) {
+                s = s + arr[i];
+            }
+        }
+        System.out.println("tong la " + s);
+    }
+
+    //Tính trunɡ bình cộnɡ các số nɡuyên tố tronɡ mảnɡ 1 chiều các số nɡuyên
+    public static void bai67(int[] arr) {
+        int s = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if ((arr[i] / 10) % 2 == 1) {
+                s = s + arr[i];
+            }
+        }
+        System.out.println("tong la " + s);
+    }
+
+    //Tính trunɡ bình cộnɡ các số nɡuyên tố tronɡ mảnɡ 1 chiều các số nɡuyên
+    public static void bai68(int[] arr) {
+        int s = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (isPrime(arr[i])) {
+                s = s + arr[i];
+            }
+        }
+        System.out.println("tong la " + s);
+    }
+
+    //    Bài 216: Đếm số lượnɡ số chẵn tronɡ mảnɡ
+    public static void bai69(int[] arr) {
+        int s = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                s++;
+            }
+        }
+        System.out.println("tong la " + s);
+    }
+
+    //    Bài 217: Đếm số dươnɡ chiɑ hết cho 7 tronɡ mảnɡ
+    public static void bai70(int[] arr) {
+        int s = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0 && arr[i] % 7 == 0) {
+                s++;
+            }
+        }
+        System.out.println("tong la " + s);
+    }
 
     public static void inputArrInt() {
         Scanner sc = new Scanner(System.in);
@@ -916,6 +1216,28 @@ public class Main {
 //        Bai45(array);
 //        Bai48(array);
 //        System.out.println(Bai49(array));
+//        System.out.println(bai51(array);
+//        System.out.println(bai52(array));
+//        System.out.println(bai53(array));
+//        System.out.println(bai55(array));
+//        System.out.println(bai56(array));
+//        System.out.println(bai57(array));
+//        System.out.println(bai58(array));
+//        Bai64(array);
+
+//        Bai65(array);
+
+//        Bai66(array);
+
+//        Bai67(array);
+
+//        Bai68(array);
+
+//        Bai69(array);
+
+//        Bai70(array);
+
+
     }
 
 
@@ -932,6 +1254,10 @@ public class Main {
 //        Bai46(array);
 //        Bai47(array);
 //        Bai50(array);
+//        System.out.println(Bai51(array));
+//        bai61(array);
+//        bai63(array);
+
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     //Bài 1: Tính S(n) = 1 + 2 + 3 + … + n
@@ -1202,6 +1202,141 @@ public class Main {
         }
         System.out.println("tong la " + s);
     }
+
+//tonng so nguyen to trong mang
+    public static void bai71(int[] arr) {
+        int s = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (isPrime(arr[i])) {
+                s++;
+            }
+        }
+        System.out.println("tonng so nguyen to trong mang " + s);
+    }
+// Đếm số lượng giá trị lớn nhất có trong mảng
+    public static void bai72(int[] array) {
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == max) {
+                count++;
+            }
+        }
+
+        System.out.println("Giá trị lớn nhất trong mảng là: " + max);
+        System.out.println("Số lượng giá trị lớn nhất trong mảng là: " + count);
+    }
+
+    //Hãy xác định số lượng phần tử kề nhau mà cả 2 đều chẵn
+    public static void bai73(int[] array) {
+        int count = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] % 2 == 0 && array[i + 1] % 2 == 0) {
+                count++;
+            }
+        }
+
+        System.out.println("Số lượng các cặp phần tử kề nhau đều chẵn là: " + count);
+    }
+
+    public static void bai74(int[] array) {
+        int count = 0;
+
+        for (int i = 0; i < array.length - 1; i++) {
+            if ((array[i] > 0 && array[i + 1] < 0) || (array[i] < 0 && array[i + 1] > 0)) {
+                count++;
+            }
+        }
+
+        System.out.println("Số lượng các cặp phần tử kề nhau trái dấu là: " + count);
+
+    }
+
+    public static  void bai75(int[] array) {
+        HashSet<Integer> distinctValues = new HashSet<>();
+
+        for (int value : array) {
+            distinctValues.add(value);
+        }
+
+        int count = distinctValues.size();
+
+        System.out.println("Số lượng các giá trị phân biệt trong mảng là: " + count);
+    }
+
+    public static  void bai76(int[] array) {
+        Arrays.sort(array);
+
+        System.out.println("Mảng sau khi sắp xếp: " + Arrays.toString(array));
+    }
+
+    public static  void bai77(int[] array) {
+        ArrayList<Integer> oddNumbers = new ArrayList<>();
+
+        for (int value : array) {
+            if (value % 2 != 0) {
+                oddNumbers.add(value);
+            }
+        }
+
+        Collections.sort(oddNumbers);
+
+        int oddIndex = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 != 0) {
+                array[i] = oddNumbers.get(oddIndex++);
+            }
+        }
+
+        // In mảng sau khi sắp xếp các số lẻ
+        System.out.println("Mảng sau khi sắp xếp các số lẻ tăng dần: ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+    }
+
+
+    public static  void bai78(int[] array) {
+        ArrayList<Integer> oddNumbers = new ArrayList<>();
+
+        for (int value : array) {
+            if (isPrime(value)) {
+                oddNumbers.add(value);
+            }
+        }
+
+        Collections.sort(oddNumbers);
+
+        int oddIndex = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 != 0) {
+                array[i] = oddNumbers.get(oddIndex++);
+            }
+        }
+
+        // In mảng sau khi sắp xếp các số lẻ
+        System.out.println("Mảng sau khi sắp xếp các số lẻ tăng dần: ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+    }
+
+//    public static  void bai79(int[] array) {
+//
+//    }
+//
+//    public static  void bai80(int[] array) {
+//
+//    }
+
+
+
 
     public static void inputArrInt() {
         Scanner sc = new Scanner(System.in);

@@ -1203,7 +1203,7 @@ public class Main {
         System.out.println("tong la " + s);
     }
 
-//tonng so nguyen to trong mang
+    //tonng so nguyen to trong mang
     public static void bai71(int[] arr) {
         int s = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -1213,7 +1213,8 @@ public class Main {
         }
         System.out.println("tonng so nguyen to trong mang " + s);
     }
-// Đếm số lượng giá trị lớn nhất có trong mảng
+
+    // Đếm số lượng giá trị lớn nhất có trong mảng
     public static void bai72(int[] array) {
         int max = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -1258,7 +1259,7 @@ public class Main {
 
     }
 
-    public static  void bai75(int[] array) {
+    public static void bai75(int[] array) {
         HashSet<Integer> distinctValues = new HashSet<>();
 
         for (int value : array) {
@@ -1270,13 +1271,13 @@ public class Main {
         System.out.println("Số lượng các giá trị phân biệt trong mảng là: " + count);
     }
 
-    public static  void bai76(int[] array) {
+    public static void bai76(int[] array) {
         Arrays.sort(array);
 
         System.out.println("Mảng sau khi sắp xếp: " + Arrays.toString(array));
     }
 
-    public static  void bai77(int[] array) {
+    public static void bai77(int[] array) {
         ArrayList<Integer> oddNumbers = new ArrayList<>();
 
         for (int value : array) {
@@ -1294,7 +1295,6 @@ public class Main {
             }
         }
 
-        // In mảng sau khi sắp xếp các số lẻ
         System.out.println("Mảng sau khi sắp xếp các số lẻ tăng dần: ");
         for (int num : array) {
             System.out.print(num + " ");
@@ -1302,7 +1302,7 @@ public class Main {
     }
 
 
-    public static  void bai78(int[] array) {
+    public static void bai78(int[] array) {
         ArrayList<Integer> oddNumbers = new ArrayList<>();
 
         for (int value : array) {
@@ -1320,22 +1320,132 @@ public class Main {
             }
         }
 
-        // In mảng sau khi sắp xếp các số lẻ
         System.out.println("Mảng sau khi sắp xếp các số lẻ tăng dần: ");
         for (int num : array) {
             System.out.print(num + " ");
         }
     }
 
-//    public static  void bai79(int[] array) {
-//
-//    }
-//
-//    public static  void bai80(int[] array) {
-//
-//    }
+    //Hãy cho biết các phần tử trong mảng có bằng nhau không
+    public static void bai79(int[] array) {
+        int elementFirst = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] != elementFirst) {
+                System.out.println("phan tu khong bang");
+                return;
 
+            }
+        }
+        System.out.println("phần tử trong mảng có bằng nhau");
+    }
 
+    //    Xóa tất cả các số âm trong mảng
+    public static void bai80(int[] array) {
+        int cout = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0) {
+                cout++;
+            }
+            ;
+        }
+
+        int[] newArr = new int[cout];
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > 0) {
+                newArr[index] = array[i];
+                index++;
+            }
+        }
+
+        System.out.println(newArr);
+    }
+
+    //    Xóa tất cả các số chẵn trong mảng
+    public static void bai81(int[] array) {
+        int cout = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0) {
+                cout++;
+            }
+            ;
+        }
+
+        int[] newArr = new int[cout];
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                newArr[index] = array[i];
+                index++;
+            }
+        }
+
+        System.out.println(newArr);
+    }
+
+    //Xóa tất cả các phần tử trùng với x
+    public static void bai82(int[] array) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhap gia tri x: ");
+        int x = sc.nextInt();
+        int cout = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == x) {
+                cout++;
+            }
+            ;
+        }
+        int[] newArr = new int[cout];
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != x) {
+                newArr[index] = array[i];
+                index++;
+            }
+        }
+        System.out.println(newArr);
+
+    }
+    //xóa tất cả các số nguyên tố trong mảng
+
+    public static void bai83(int[] array) {
+
+        int cout = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (isPrime(array[i])) {
+                cout++;
+            }
+            ;
+        }
+        int[] newArr = new int[cout];
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (!isPrime(array[i])) {
+                newArr[index] = array[i];
+                index++;
+            }
+        }
+        System.out.println(newArr);
+    }
+    public static void bai84(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                System.out.println("khong tang dan");
+                return ;
+            }
+        }
+        System.out.println("mang tang dan");
+    }
+
+    public static void bai86(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] < arr[i + 1]) {
+                System.out.println("khong giam dan");
+                return;
+            }
+        }
+        System.out.println("mang giam dan");
+    }
 
 
     public static void inputArrInt() {

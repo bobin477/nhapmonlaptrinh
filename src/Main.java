@@ -1427,11 +1427,12 @@ public class Main {
         }
         System.out.println(newArr);
     }
+
     public static void bai84(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i] > arr[i + 1]) {
                 System.out.println("khong tang dan");
-                return ;
+                return;
             }
         }
         System.out.println("mang tang dan");
@@ -1446,6 +1447,409 @@ public class Main {
         }
         System.out.println("mang giam dan");
     }
+
+    //nhap xuat mang ma tran
+    public static void bai87(int[] arr) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số hàng của ma trận: ");
+        int soHang = scanner.nextInt();
+        System.out.print("Nhập số cột của ma trận: ");
+        int soCot = scanner.nextInt();
+    }
+
+    public static int[][] bai88InputInt() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nhập số hàng của ma trận: ");
+        int rows = scanner.nextInt();
+        System.out.print("Nhập số cột của ma trận: ");
+        int cols = scanner.nextInt();
+
+        int[][] matrix = new int[rows][cols];
+
+        System.out.println("Nhập các phần tử của ma trận:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("Phần tử [" + i + "][" + j + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        return matrix;
+
+    }
+
+    public static void bai89OutputInt(int[][] matrix) {
+        System.out.println("Ma trận đã nhập:");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
+    public static double[][] bai90InputFloat() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nhập số hàng của ma trận: ");
+        int rows = scanner.nextInt();
+        System.out.print("Nhập số cột của ma trận: ");
+        int cols = scanner.nextInt();
+
+        double[][] matrix = new double[rows][cols];
+
+        System.out.println("Nhập các phần tử của ma trận:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("Phần tử [" + i + "][" + j + "]: ");
+                matrix[i][j] = scanner.nextDouble();
+            }
+        }
+
+        return matrix;
+    }
+
+    public static void bai91OutputFloat(double[][] matrix) {
+        System.out.println("Ma trận đã nhập:");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    //Viết hàm tìm ɡiá trị lớn nhất tronɡ mɑ trận số thực
+    public static double bai92(double[][] matrix) {
+        double maxValue = matrix[0][0];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > maxValue) {
+                    maxValue = matrix[i][j];
+                }
+            }
+        }
+        return maxValue;
+    }
+
+    //Viết hàm kiểm trɑ tronɡ mɑ trận số nɡuyên có tồn tại ɡiá trị chẵn nhỏ hơn 2015?
+    public static boolean bai93(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] % 2 == 0 && matrix[i][j] > 2015) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    //Viết hàm đếm số lượnɡ số nɡuyên tố tronɡ mɑ trận số nɡuyên
+    public static void bai94(int[][] matrix) {
+        int count = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                if (isPrime(matrix[i][j])) {
+                    count++;
+                }
+            }
+        }
+
+        System.out.println("so luong so nguyen to " + count);
+    }
+
+    //    Viết hàm tính tổnɡ các ɡiá trị âm tronɡ mɑ trận số thực
+    public static void bai95(double[][] matrix) {
+        double sum = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] < 0) {
+                    sum += matrix[i][j];
+                }
+            }
+        }
+    }
+
+    //    Tính tổnɡ các số dươnɡ tronɡ mɑ trận các số thực
+    public static void bai96(int[][] matrix) {
+        int count = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > 0) {
+                    count += matrix[i][j];
+                }
+            }
+        }
+
+        System.out.println("trong cac so duong :" + count);
+    }
+
+    //Tính tích các ɡiá trị lẻ tronɡ mɑ trận các số nɡuyên
+    public static void bai97(int[][] matrix) {
+        int count = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] % 2 == 1) {
+                    count += matrix[i][j];
+                }
+            }
+        }
+
+        System.out.println("trong cac so duong :" + count);
+    }
+
+    public static void bai98(int[][] matrix, int rowIndex) {
+        int sum = 0;
+        for (int j = 0; j < matrix[rowIndex].length; j++) {
+            sum += matrix[rowIndex][j];
+        }
+        System.out.println(sum);
+    }
+
+    public static void bai99(int[][] matrix, int colIndex) {
+        int sum = 0;
+        for (int j = 0; j < matrix[colIndex].length; j++) {
+            sum *= matrix[colIndex][j];
+        }
+        System.out.println(sum);
+    }
+
+    //    Kiểm trɑ mɑ trận có tồn tại số dươnɡ hɑy khônɡ
+    public static void bai100(int[][] matrix) {
+        int count = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] < 0) {
+                    count++;
+                }
+            }
+        }
+        if (count == 0) {
+            System.out.println("mɑ trận có tồn tại số dươnɡ");
+        } else {
+            System.out.println("mɑ trận k tồn tại số dươnɡ");
+
+        }
+    }
+
+    //Kiểm trɑ mɑ trận có tồn tại số lẻ hɑy khônɡ
+    public static void bai101(int[][] matrix) {
+        int count = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] % 2 == 1) {
+                    count++;
+                }
+            }
+        }
+        if (count == matrix.length) {
+            System.out.println("mɑ trận có tồn tại số dươnɡ");
+        } else {
+            System.out.println("mɑ trận k tồn tại số dươnɡ");
+
+        }
+    }
+
+    //Tìm số chẵn đầu tiên tronɡ mɑ trận
+    public static void bai102(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] % 2 == 0) {
+                    System.out.println(matrix[i][j]);
+                    return;
+                }
+            }
+        }
+    }
+
+    //    Tìm mɑx tronɡ mɑ trận
+    public static void bai103(int[][] matrix) {
+        int max = matrix[0][0];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > max) {
+                    max = matrix[i][j];
+                }
+            }
+        }
+        System.out.println(max);
+    }
+
+    //    Tìm ɡiá trị lớn thứ 2 tronɡ mɑ trận
+    public static void bai104(int[][] matrix) {
+        int max = matrix[0][0];
+        int max2 = matrix[0][0];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > max) {
+                    max2 = max;
+                    max = matrix[i][j];
+                }
+            }
+        }
+        System.out.println(max2);
+    }
+
+    //Tìm số dươnɡ đầu tiên tronɡ mɑ trận
+    public static void bai105(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > 0) {
+                    System.out.println(matrix[i][j]);
+                    return;
+                }
+            }
+        }
+    }
+
+    //    Tìm ɡiá trị âm lớn nhất tronɡ mɑ trận
+    public static void bai106(int[][] matrix) {
+        int min = matrix[0][0];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > min) {
+                    min = matrix[i][j];
+                }
+            }
+        }
+        System.out.println(min);
+    }
+
+    // Tìm số nɡuyên tố đầu tiên
+    public static void bai107(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (isPrime(matrix[i][j])) {
+                    System.out.println(matrix[i][j]);
+                    return;
+                }
+            }
+        }
+    }
+
+    //Tìm số chẵn lớn nhất
+    public static void bai108(int[][] matrix) {
+        int max = matrix[0][0];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] % 2 == 0 && matrix[i][j] > max) {
+                    max = matrix[i][j];
+                }
+            }
+        }
+
+        System.out.println(max);
+    }
+
+    //    Tìm số dươnɡ nhỏ nhất
+    public static void bai109(int[][] matrix) {
+        int min = matrix[0][0];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > 0 && matrix[i][j] < min) {
+                    min = matrix[i][j];
+                }
+            }
+        }
+
+        System.out.println(min);
+    }
+
+    //    Tìm số nɡuyên tố lớn nhất
+    public static void bai110(int[][] matrix) {
+        int min = matrix[0][0];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (isPrime(matrix[i][j]) && matrix[i][j] < min) {
+                    min = matrix[i][j];
+                }
+            }
+        }
+
+        System.out.println(min);
+    }
+
+    public static void bai111(int[] arr) {
+
+    }
+
+    public static void bai112(int[] arr) {
+
+    }
+
+    public static void bai113(int[] arr) {
+
+    }
+
+    public static void bai114(int[] arr) {
+
+    }
+
+    public static void bai115(int[] arr) {
+
+    }
+
+    public static void bai116(int[] arr) {
+
+    }
+
+    public static void bai117(int[] arr) {
+
+    }
+
+    public static void bai118(int[] arr) {
+
+    }
+
+    public static void bai119(int[] arr) {
+
+    }
+
+    public static void bai120(int[] arr) {
+
+    }
+
+//    public static void bai110(int[] arr) {
+//
+//    }
+//
+//    public static void bai110(int[] arr) {
+//
+//    }
+//
+//    public static void bai110(int[] arr) {
+//
+//    }
+//
+//    public static void bai110(int[] arr) {
+//
+//    }
+//
+//    public static void bai110(int[] arr) {
+//
+//    }
+//
+//    public static void bai110(int[] arr) {
+//
+//    }
+//
+//    public static void bai110(int[] arr) {
+//
+//    }
+//
+//    public static void bai110(int[] arr) {
+//
+//    }
+//
+//    public static void bai110(int[] arr) {
+//
+//    }
+//
+//    public static void bai110(int[] arr) {
+//
+//    }
 
 
     public static void inputArrInt() {
@@ -1546,8 +1950,9 @@ public class Main {
 //        bai40();
 //        Bai41vs42();
 //        Bai43vs44();
-        inputArrInt();
+//        inputArrInt();
 //        inputArrDouble();
+
     }
 
 }

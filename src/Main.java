@@ -1771,87 +1771,6 @@ public class Main {
         System.out.println(min);
     }
 
-    public static void bai111(int[] arr) {
-
-    }
-
-    public static void bai112(int[] arr) {
-
-    }
-
-    public static void bai113(int[] arr) {
-
-    }
-
-    public static void bai114(int[] arr) {
-
-    }
-
-    public static void bai115(int[] arr) {
-
-    }
-
-    public static void bai116(int[] arr) {
-
-    }
-
-    public static void bai117(int[] arr) {
-
-    }
-
-    public static void bai118(int[] arr) {
-
-    }
-
-    public static void bai119(int[] arr) {
-
-    }
-
-    public static void bai120(int[] arr) {
-
-    }
-
-//    public static void bai110(int[] arr) {
-//
-//    }
-//
-//    public static void bai110(int[] arr) {
-//
-//    }
-//
-//    public static void bai110(int[] arr) {
-//
-//    }
-//
-//    public static void bai110(int[] arr) {
-//
-//    }
-//
-//    public static void bai110(int[] arr) {
-//
-//    }
-//
-//    public static void bai110(int[] arr) {
-//
-//    }
-//
-//    public static void bai110(int[] arr) {
-//
-//    }
-//
-//    public static void bai110(int[] arr) {
-//
-//    }
-//
-//    public static void bai110(int[] arr) {
-//
-//    }
-//
-//    public static void bai110(int[] arr) {
-//
-//    }
-
-
     public static void inputArrInt() {
         Scanner sc = new Scanner(System.in);
         System.out.println("nhap so luong phan tu mang");
@@ -1909,6 +1828,227 @@ public class Main {
 
     }
 
+    //bai 111
+    public static class PhanSo {
+        int mauto;
+        int tuso;
+
+        public PhanSo() {
+            this.mauto = 2;
+            this.tuso = 4;
+        }
+
+        public PhanSo(int ms, int ts) {
+            this.mauto = ms;
+            this.tuso = ts;
+        }
+
+        public void Nhap() {
+            Scanner scanner = new Scanner(System.in);
+
+            this.tuso = scanner.nextInt();
+            this.mauto = scanner.nextInt();
+        }
+
+        public void xuat() {
+            System.out.println("phan so do la: " + this.tuso + "/" + this.mauto);
+        }
+
+        public int TimUCLN(int a, int b) {
+            if (a < 0) {
+                a = a * -1;
+            }
+            if (b < 0) {
+                b = b * -1;
+            }
+
+            if (a == 0 && b != 0) {
+                return b;
+            } else if (b == 0 && a != 0) {
+                return a;
+            }
+
+            while (a != b) {
+                if (a > b) {
+                    a = a - b;
+                } else
+                    b = b - a;
+            }
+            return a;
+        }
+        //bai 116
+        public void RutgonPhanSo() {
+            int UCLN = TimUCLN(this.mauto, this.tuso);
+            this.tuso = this.tuso / UCLN;
+            this.mauto = this.mauto / UCLN;
+            System.out.println("phan so sau khi rut gon: " + this.tuso + "/" + this.mauto);
+        }
+        // baii 117
+        public void tinhTong2Ps(PhanSo a, PhanSo b) {
+            PhanSo ketqua = new PhanSo();
+            ketqua.mauto = a.mauto * b.mauto;
+            ketqua.tuso = a.tuso * b.mauto + a.mauto * b.tuso;
+            System.out.println(ketqua.toString());
+        }
+        // baii 118
+        public void tinhHieu2Ps(PhanSo a, PhanSo b) {
+            PhanSo ketqua = new PhanSo();
+            ketqua.mauto = a.mauto * b.mauto;
+            ketqua.tuso = a.tuso * b.mauto - a.mauto * b.tuso;
+            System.out.println(ketqua.toString());
+
+        }
+        // baii 119
+        public void tinhTich2Ps(PhanSo a, PhanSo b) {
+            PhanSo ketqua = new PhanSo();
+            ketqua.mauto = a.mauto * b.mauto;
+            ketqua.tuso = a.tuso * b.tuso;
+            System.out.println(ketqua);
+
+        }
+        //bai 120
+        public void tinhthuong2Ps(PhanSo a, PhanSo b) {
+            PhanSo ketqua = new PhanSo();
+            ketqua.mauto = a.tuso * b.mauto;
+            ketqua.tuso = a.mauto * b.tuso;
+            System.out.println(ketqua.toString());
+
+        }
+
+        @Override
+        public String toString() {
+            return this.tuso + "/" + this.mauto;
+        }
+    }
+    //bai 112
+
+    public static class HonSo {
+        int mauto;
+        int tuso;
+        int songuyen;
+
+        public HonSo() {
+            this.mauto = 1;
+            this.tuso = 2;
+            this.songuyen = 3;
+        }
+
+        public HonSo(int ms, int ts, int sn) {
+            this.mauto = ms;
+            this.tuso = ts;
+            this.songuyen = sn;
+        }
+
+        public void Nhap() {
+            Scanner scanner = new Scanner(System.in);
+
+            this.tuso = scanner.nextInt();
+            this.mauto = scanner.nextInt();
+            this.songuyen = scanner.nextInt();
+        }
+
+        public void xuat() {
+            System.out.println("phan so do la: " + this.songuyen + this.tuso + "/" + this.mauto);
+        }
+
+        @Override
+        public String toString() {
+            return this.songuyen + " " + this.tuso + "/" + this.mauto;
+        }
+    }
+    //bai 113
+
+    public static class ToaDoOxy {
+        int x;
+        int y;
+
+        public ToaDoOxy() {
+            this.x = 1;
+            this.y = 2;
+        }
+
+        public ToaDoOxy(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public void Nhap() {
+            Scanner scanner = new Scanner(System.in);
+            this.x = scanner.nextInt();
+            this.y = scanner.nextInt();
+        }
+
+        public void xuat() {
+            System.out.println("toa do la: (" + this.x + "," + this.y + ")");
+        }
+
+        @Override
+        public String toString() {
+            return "toa do la: (" + this.x + "," + this.y + ")";
+        }
+    }
+    //bai 114
+
+    public static class ToaDoOxyz {
+        int x;
+        int y;
+        int z;
+
+        public ToaDoOxyz() {
+            this.x = 1;
+            this.y = 2;
+            this.z = 3;
+        }
+
+        public ToaDoOxyz(int x, int y, int z) {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+
+        public void Nhap() {
+            Scanner scanner = new Scanner(System.in);
+            this.x = scanner.nextInt();
+            this.y = scanner.nextInt();
+            this.z = scanner.nextInt();
+        }
+
+        public void xuat() {
+            System.out.println("toa do la: (" + this.x + "," + this.y + "," + this.z + ")");
+        }
+
+        @Override
+        public String toString() {
+            return "toa do la: (" + this.x + "," + this.y + "," + this.z + ")";
+        }
+    }
+    //bai 115
+
+    public static class DonThuc {
+        int a;
+        int n;
+
+        public DonThuc() {
+            this.a = 1;
+            this.n = 2;
+        }
+
+        public DonThuc(int a, int n) {
+            this.a = a;
+            this.n = n;
+        }
+
+        public void Nhap() {
+            Scanner scanner = new Scanner(System.in);
+            this.a = scanner.nextInt();
+            this.n = scanner.nextInt();
+        }
+
+        public void xuat() {
+            System.out.println("Don thuc do la: " + this.a + "x^" + this.n);
+        }
+    }
+
     public static void main(String[] args) {
 //        bai01();
 //        bai02();
@@ -1952,6 +2092,7 @@ public class Main {
 //        Bai43vs44();
 //        inputArrInt();
 //        inputArrDouble();
+
 
     }
 

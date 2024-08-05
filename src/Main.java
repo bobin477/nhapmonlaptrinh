@@ -1876,6 +1876,7 @@ public class Main {
             }
             return a;
         }
+
         //bai 116
         public void RutgonPhanSo() {
             int UCLN = TimUCLN(this.mauto, this.tuso);
@@ -1883,6 +1884,7 @@ public class Main {
             this.mauto = this.mauto / UCLN;
             System.out.println("phan so sau khi rut gon: " + this.tuso + "/" + this.mauto);
         }
+
         // baii 117
         public void tinhTong2Ps(PhanSo a, PhanSo b) {
             PhanSo ketqua = new PhanSo();
@@ -1890,6 +1892,7 @@ public class Main {
             ketqua.tuso = a.tuso * b.mauto + a.mauto * b.tuso;
             System.out.println(ketqua.toString());
         }
+
         // baii 118
         public void tinhHieu2Ps(PhanSo a, PhanSo b) {
             PhanSo ketqua = new PhanSo();
@@ -1898,6 +1901,7 @@ public class Main {
             System.out.println(ketqua.toString());
 
         }
+
         // baii 119
         public void tinhTich2Ps(PhanSo a, PhanSo b) {
             PhanSo ketqua = new PhanSo();
@@ -1906,6 +1910,7 @@ public class Main {
             System.out.println(ketqua);
 
         }
+
         //bai 120
         public void tinhthuong2Ps(PhanSo a, PhanSo b) {
             PhanSo ketqua = new PhanSo();
@@ -1947,9 +1952,26 @@ public class Main {
             this.songuyen = scanner.nextInt();
         }
 
-        public void xuat() {
+        public void tong2honso() {
             System.out.println("phan so do la: " + this.songuyen + this.tuso + "/" + this.mauto);
         }
+
+        public void hieu2honso() {
+            System.out.println("phan so do la: " + this.songuyen + this.tuso + "/" + this.mauto);
+        }
+
+        public void tich2honso() {
+            System.out.println("phan so do la: " + this.songuyen + this.tuso + "/" + this.mauto);
+        }
+
+        public void thuong2honso() {
+            System.out.println("phan so do la: " + this.songuyen + this.tuso + "/" + this.mauto);
+        }
+
+        public void rutgonhonso() {
+            System.out.println("phan so do la: " + this.songuyen + this.tuso + "/" + this.mauto);
+        }
+
 
         @Override
         public String toString() {

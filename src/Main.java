@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.LinkedList;
 
 public class Main {
     //Bài 1: Tính S(n) = 1 + 2 + 3 + … + n
@@ -2137,6 +2138,176 @@ public class Main {
         }
     }
 
+    public static void dslkphanso() {
+        LinkedList<PhanSo> phanso = new LinkedList<>();
+    }
+
+    public static void dslkhophuc() {
+        LinkedList<HonSo> honso = new LinkedList<>();
+    }
+
+    public static void bai130() {
+        LinkedList<Integer> SoNguyen = new LinkedList<>();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số lượng phần tử trong danh sách: ");
+        int n = scanner.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("nhap phan tu thu " + (i + 1) + ":");
+            int songuyen = scanner.nextInt();
+            SoNguyen.add(songuyen);
+        }
+
+        System.out.println("xuat danh sach lien ket" + SoNguyen);
+
+        int sum = 0;
+        System.out.println("tong cac node trong danh sach");
+        for (int i = 0; i < SoNguyen.size(); i++) {
+            sum += SoNguyen.get(i);
+        }
+
+        System.out.println(sum);
+
+    }
+
+    public static void bai131() {
+        LinkedList<Integer> SoNguyen = new LinkedList<>();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số lượng phần tử trong danh sách: ");
+        int n = scanner.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("nhap phan tu thu " + (i + 1) + ":");
+            int songuyen = scanner.nextInt();
+            SoNguyen.add(songuyen);
+        }
+
+        System.out.println("xuat danh sach lien ket" + SoNguyen);
+
+    }
+
+    public static void bai132() {
+        LinkedList<Float> SoThuc = new LinkedList<>();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số lượng phần tử trong danh sách: ");
+        int n = scanner.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("nhap phan tu thu " + (i + 1) + ":");
+            float songuyen = scanner.nextFloat();
+            SoThuc.add(songuyen);
+        }
+
+        System.out.println("xuat danh sach lien ket" + SoThuc);
+    }
+
+    public static void bai133() {
+        LinkedList<ToaDoOxy> toaDoOxyList = new LinkedList<>();
+        ToaDoOxy toaDoOxy = new ToaDoOxy();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số lượng phần tử trong danh sách: ");
+        int n = scanner.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("nhap phan tu thu " + (i + 1) + ":");
+            toaDoOxy.Nhap();
+        }
+
+        System.out.println(toaDoOxyList);
+    }
+
+    //bai 134
+    public static void kiemtraListrong(LinkedList<Integer> listInt) {
+        if (listInt.size() < 0) {
+            System.out.println("danh sach rong");
+        }
+
+        System.out.println("danh sach k ranh");
+    }
+
+    //bai 135
+    public static void them1nodevaodau(LinkedList<Integer> listInt) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số lượng phần tử trong danh sách: ");
+        int n = scanner.nextInt();
+
+        listInt.addFirst(n);
+    }
+
+    //bai 136
+    public static int laynodedautien(LinkedList<Integer> listInt) {
+        return listInt.getFirst();
+    }
+
+    //    137
+    class Student {
+        private String name;
+        private float mathScore;
+        private float literatureScore;
+        private float averageScore;
+
+        public Student(String name, float mathScore, float literatureScore, float averageScore) {
+            this.name = name;
+            this.mathScore = mathScore;
+            this.literatureScore = literatureScore;
+            this.averageScore = averageScore;
+        }
+
+        public Student() {
+
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public float getMathScore() {
+            return mathScore;
+        }
+
+        public float getLiteratureScore() {
+            return literatureScore;
+        }
+
+
+        public String setName(String name) {
+            return this.name = name;
+        }
+
+        public float setMathScore(float mathScore) {
+            return this.mathScore = mathScore;
+        }
+
+        public float setLiteratureScore(float literatureScore) {
+            return this.literatureScore = literatureScore;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("Name: %s, Math: %d, Literature: %d, Average: %.2f",
+                    name, mathScore, literatureScore, averageScore);
+        }
+    }
+
+    public class StudentListManager {
+        private LinkedList<Student> students;
+
+        public StudentListManager() {
+            students = new LinkedList<>();
+        }
+
+        public void addStudent(Student student) {
+            students.add(student);
+        }
+
+        public void printList() {
+            for (Student student : students) {
+                System.out.println(student);
+            }
+        }
+
+
+    }
 
 
     public static void main(String[] args) {

@@ -72,7 +72,7 @@ public class Main {
         System.out.println("nhap so nguyen duong");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int s = 0;
+        int s = 1;
         for (int i = 1; i <= n; i++) {
             if (n % i == 0) {
                 s = s * i;
@@ -1944,6 +1944,7 @@ public class Main {
             this.songuyen = sn;
         }
 
+        //bai 121
         public void Nhap() {
             Scanner scanner = new Scanner(System.in);
 
@@ -1952,24 +1953,89 @@ public class Main {
             this.songuyen = scanner.nextInt();
         }
 
-        public void tong2honso() {
-            System.out.println("phan so do la: " + this.songuyen + this.tuso + "/" + this.mauto);
+        //        bai 122
+        public void Xuat() {
+            System.out.println("hon so do la" + this.songuyen + " " + this.tuso + "/" + this.mauto);
         }
 
-        public void hieu2honso() {
-            System.out.println("phan so do la: " + this.songuyen + this.tuso + "/" + this.mauto);
+        public int TimUCLN(int a, int b) {
+            if (a < 0) {
+                a = a * -1;
+            }
+            if (b < 0) {
+                b = b * -1;
+            }
+
+            if (a == 0 && b != 0) {
+                return b;
+            } else if (b == 0 && a != 0) {
+                return a;
+            }
+
+            while (a != b) {
+                if (a > b) {
+                    a = a - b;
+                } else
+                    b = b - a;
+            }
+            return a;
         }
 
-        public void tich2honso() {
-            System.out.println("phan so do la: " + this.songuyen + this.tuso + "/" + this.mauto);
+        //bai 123
+        public void rutgonhonso(HonSo honSo) {
+            if (honSo.tuso > honSo.mauto) {
+                int temp = honSo.tuso / honSo.mauto;
+                honSo.songuyen += temp;
+                honSo.tuso -= honSo.mauto * temp;
+            }
+            int UCLN = TimUCLN(honSo.tuso, honSo.mauto);
+            honSo.tuso /= UCLN;
+            honSo.mauto /= UCLN;
+
         }
 
-        public void thuong2honso() {
-            System.out.println("phan so do la: " + this.songuyen + this.tuso + "/" + this.mauto);
+        //124
+        public void cong2honso(HonSo hs1, HonSo hs2) {
+            HonSo c = new HonSo();
+            c.songuyen = hs1.songuyen + hs2.songuyen;
+            c.tuso = hs1.tuso * hs2.mauto + hs1.mauto * hs2.tuso;
+            c.mauto = hs1.mauto * hs2.mauto;
+
+            System.out.println(c);
         }
 
-        public void rutgonhonso() {
-            System.out.println("phan so do la: " + this.songuyen + this.tuso + "/" + this.mauto);
+        //125
+        public void tru2honso(HonSo hs1, HonSo hs2) {
+            HonSo c = new HonSo();
+            c.songuyen = hs1.songuyen - hs2.songuyen;
+            c.tuso = hs1.tuso * hs2.mauto - hs1.mauto * hs2.tuso;
+            c.mauto = hs1.mauto * hs2.mauto;
+
+            System.out.println(c);
+        }
+
+        //126
+        public void tich2honso(HonSo hs1, HonSo hs2) {
+            hs1.tuso = hs1.tuso + hs1.songuyen * hs1.mauto;
+            hs2.tuso = hs2.tuso + hs2.songuyen * hs2.mauto;
+
+            HonSo c = new HonSo();
+            c.songuyen = 0;
+            c.tuso = hs1.tuso * hs2.tuso;
+            c.mauto = hs1.mauto * hs2.mauto;
+            System.out.println(c);
+        }
+
+        //127
+        public void tthuong2honso(HonSo hs1, HonSo hs2) {
+            hs1.tuso = hs1.tuso + hs1.songuyen * hs1.mauto;
+            hs2.tuso = hs2.tuso + hs2.songuyen * hs2.mauto;
+
+            HonSo c = new HonSo();
+            c.songuyen = 0;
+            c.tuso = hs1.tuso * hs2.mauto;
+            c.mauto = hs1.mauto * hs2.tuso;
+            System.out.println(c);
         }
 
 
@@ -2070,6 +2136,8 @@ public class Main {
             System.out.println("Don thuc do la: " + this.a + "x^" + this.n);
         }
     }
+
+
 
     public static void main(String[] args) {
 //        bai01();

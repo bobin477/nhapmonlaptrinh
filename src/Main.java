@@ -2048,8 +2048,8 @@ public class Main {
     //bai 113
 
     public static class ToaDoOxy {
-        int x;
-        int y;
+        double x;
+        double y;
 
         public ToaDoOxy() {
             this.x = 1;
@@ -2071,12 +2071,47 @@ public class Main {
             System.out.println("toa do la: (" + this.x + "," + this.y + ")");
         }
 
+        public void tinhkhoangcach(ToaDoOxy a, ToaDoOxy b) {
+            double khoangCach = Math.sqrt(Math.pow(b.x - a.x, 2)) + Math.pow(b.y - a.y, 2);
+            System.out.println("khaong cach la " + khoangCach);
+        }
+
+        public void tinhkhoangcach2diemtheoOX(ToaDoOxy a, ToaDoOxy b) {
+            double khoangCach = Math.abs(a.x - b.x);
+            System.out.println("khaong cach la " + khoangCach);
+        }
+
+        public void tinhkhoangcach2diemtheoOy(ToaDoOxy a, ToaDoOxy b) {
+            double khoangCach = Math.abs(a.y - b.y);
+            System.out.println("khaong cach la " + khoangCach);
+        }
+
+        public boolean KiemTraDiemThuocPhanTu1(ToaDoOxy a) {
+            return a.x > 0 && a.y > 0;
+        }
+
+        public boolean KiemTraDiemThuocPhanTu2(ToaDoOxy a) {
+            return a.x < 0 && a.y > 0;
+        }
+
+        public boolean KiemTraDiemThuocPhanTu3(ToaDoOxy a) {
+            return a.x < 0 && a.y < 0;
+        }
+
+        public boolean KiemTraDiemThuocPhanTu4(ToaDoOxy a) {
+            return a.x > 0 && a.y < 0;
+        }
+
         @Override
         public String toString() {
             return "toa do la: (" + this.x + "," + this.y + ")";
         }
+
+
     }
-    //bai 114
+
+
+//bai 114
 
     public static class ToaDoOxyz {
         int x;
@@ -2111,7 +2146,7 @@ public class Main {
             return "toa do la: (" + this.x + "," + this.y + "," + this.z + ")";
         }
     }
-    //bai 115
+//bai 115
 
     public static class DonThuc {
         int a;
